@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Text Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+</head>
+<body>
+    <div class="toolbar">
+        <button onclick="execCmd('bold')"><b>B</b></button>
+        <button onclick="execCmd('italic')"><i>I</i></button>
+        <button onclick="execCmd('underline')"><u>U</u></button>
+        <button id="subscript" class="option-button script"></button>
+             <i class="fa-solid fa-subscript"></i>
+             <button id="insertUnorderedList" class="option-button"></button>
+             <i class="fa-solid fa-list-ul"></i>
+             <button id="insertOrderedList" class="option-button"></button>
+             <i class="fa-solid fa-list-ol"></i>
+             <button id="undo" class="option-button"></button>
+             <i class="fa-solid fa-rotate-left"></i>
+             <button id="redo" class="option-button"></button>
+             <i class="fa-solid fa-rotate-right"></i>
+             <button id="createLink" class="adv-option-button"></button>
+             <i class="fa-solid fa-link"></i>
+             <button id="UnLink" class="option-button"></button>
+             <i class="fa-solid fa-link-slash"></i>
+             <button id="JUstifyLeft" class="option-button align"></button>
+             <i class="fa-solid fa-align-left"></i>
+             <button id="JUstifyRight" class="option-button align"></button>
+             <i class="fa-solid fa-align-right"></i>
+             <button id="JUstifycenter" class="option-button align"></button>
+             <i class="fa-solid fa-align-center"></i>
+             <button id="JUstifyFull" class="option-button align"></button>
+             <i class="fa-solid fa-align-justify"></i>
+             <button id="indent" class="option-button spacing"></button>
+             <i class="fa-solid fa-indent"></i>
+             <button id="outdent" class="option-button spacing"></button>
+             <i class="fa-solid fa-outdent"></i>
+        <select onchange="execCmd('fontSize', this.value)">
+            <option value="1">Size 1</option>
+            <option value="2">Size 2</option>
+            <option value="3">Size 3</option>
+        </select>
+        <input type="color" onchange="execCmd('foreColor', this.value)">
+    </div>
+    <div contenteditable="true" class="editor" id="editor"></div>
+    <script src="script.js"></script>
+</body>
+</html>
